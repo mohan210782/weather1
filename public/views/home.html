@@ -1,0 +1,216 @@
+
+<div class="container-fluid">
+		<div class="row">
+			 <div class="col-md-12">
+                        <div class="card card-user">
+                           <div class="header">
+                                <h4 class="title">Search </h4>
+                            </div>
+                            <div class="content" id="weather-form">
+                               <form name="weatherForm" ng-submit="submitForm()">
+                                   
+									<div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Location</label>
+                                                 <input  type="text" name="name" class="form-control input-lg text-center" ng-model="weather.location">
+												
+                                            </div>
+                                        </div>
+									</div>
+									
+									<button type="submit" class="btn btn-info btn-fill pull-right" >search</button>
+                                    
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+		</div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="header">
+								<h2>Weather Report now </h2>
+                                <h4 class="title">{{ weather.name }} {{ weather.sys.country}}</h4>
+								<p><img src="{{weather.weather.iconUrl}}" alt="{{weather.weather.icon}}"/>{{weather.main.temp}} &#8457;</h2></p>
+                            </div>
+                            <div class="content">
+                                <form>
+									<div class="row">
+										<div class="col-md-12">
+											<h6>Cloudiness</h6>
+										</div>
+									</div>
+                                    <div class="row">
+										
+                                        <div class="col-md-6">
+											<div class="form-group">
+                                                <label>Cloud</label>
+												    <input disabled type="text" class="form-control" placeholder="Cloud" ng-model="weather.weather[0].main">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <input disabled type="text" class="form-control" placeholder="Description" ng-model="weather.weather[0].description">
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+									<div class="row">
+										<div class="col-md-12">
+										<h6> Wind </h6>
+										</div>
+									</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Speed(m/s)</label>
+                                                <input disabled type="text" class="form-control" placeholder="Speed" ng-model="weather.wind.speed">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Direction</label>
+                                                <input disabled type="text" class="form-control" placeholder="Direction" ng-model="weather.wind.deg">
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="row">
+										<div class="col-md-12">
+										<h6>Weather </h6>
+										</div>
+									</div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Pressure (hpa)</label>
+                                                <input disabled type="text" class="form-control" placeholder="Home Address" ng-model="weather.main.pressure">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Humidity (%)</label>
+                                                <input disabled type="text" class="form-control" placeholder="Humidity" ng-model="weather.main.humidity">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Temp Min</label>
+                                                <input disabled type="text" class="form-control" placeholder="Temp Min" ng-model="weather.main.temp_min">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Temp Max</label>
+                                                <input disabled type="number" class="form-control"  placeholder="Temp Max" ng-model="weather.main.temp_max">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+					 <div class="col-md-6">
+                        <div class="card">
+                            <div class="header">
+								<h2>Weather Report Previous</h2>
+                                <h4 class="title">{{ weatherPre.name }} {{ weatherPre.sys.country}}</h4>
+								<p><img src="{{weatherPre.weather.iconUrl}}" alt="{{weatherPre.weather.icon}}"/>{{weatherPre.main.temp}} &#8457;</h2></p>
+                            </div>
+                            <div class="content">
+                                <form>
+									<div class="row">
+										<div class="col-md-12">
+											<h6>Cloudiness</h6>
+										</div>
+									</div>
+                                    <div class="row">
+										
+                                        <div class="col-md-6">
+											<div class="form-group">
+                                                <label>Cloud</label>
+												    <input disabled type="text" class="form-control" placeholder="Cloud" ng-model="weatherPre.weather[0].main">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Description</label>
+                                                <input disabled type="text" class="form-control" placeholder="Description" ng-model="weatherPre.weather[0].description">
+                                            </div>
+                                        </div>
+                                       
+                                    </div>
+									<div class="row">
+										<div class="col-md-12">
+										<h6> Wind </h6>
+										</div>
+									</div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Speed(m/s)</label>
+                                                <input disabled type="text" class="form-control" placeholder="Speed" ng-model="weatherPre.wind.speed">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Direction</label>
+                                                <input disabled type="text" class="form-control" placeholder="Direction" ng-model="weatherPre.wind.deg">
+                                            </div>
+                                        </div>
+                                    </div>
+									<div class="row">
+										<div class="col-md-12">
+										<h6>Weather </h6>
+										</div>
+									</div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Pressure (hpa)</label>
+                                                <input disabled type="text" class="form-control" placeholder="Home Address" ng-model="weatherPre.main.pressure">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Humidity (%)</label>
+                                                <input disabled type="text" class="form-control" placeholder="Humidity" ng-model="weatherPre.main.humidity">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Temp Min</label>
+                                                <input disabled type="text" class="form-control" placeholder="Temp Min" ng-model="weatherPre.main.temp_min">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Temp Max</label>
+                                                <input disabled type="number" class="form-control"  placeholder="Temp Max" ng-model="weatherPre.main.temp_max">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                   
+
+                </div>
+            </div>
